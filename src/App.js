@@ -9,7 +9,7 @@ import { showNotification as show, checkWin, getWord } from './helpers/helpers';
 
 import './App.css';
 
-function App() {
+const App = () => {
   const [playable, setPlayable] = useState(true);
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
@@ -55,7 +55,7 @@ function App() {
     return () => window.removeEventListener('keyup', handleKeydown);
   }, [correctLetters, wrongLetters,playable]);
 
-  function playAgain() {
+  const  playAgain = () => {
 
     setPlayable(true);
     setCorrectLetters([]);
