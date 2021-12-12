@@ -31,7 +31,7 @@ const Figure = ({ wrongLetters }) => {
         <line x1="100" y1="90" x2="140" y2="120" />
       }
       {errors > 5 &&
-        <line x1="120" y1="90" x2="220" y2="120" />
+        <line x1="100" y1="90" x2="60" y2="120" />
       }
     </svg>
   )

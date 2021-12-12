@@ -80,7 +80,7 @@ const App = () => {
   }else if(wrongLetters.length === 6){
     visibility = "visible"
   }
-
+console.log(selectedWord)
   return (
     <>
       <Header />

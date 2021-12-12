@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hangman game is favorite game of many yound and old people worldwide.  When user start the game API call to random word generator.User has to guess hidden word and upon every entry of letter, use gets feedback if letter is part of the hidden word or not. Also in case when user successfully guesses letter in the word, position of the letter is displayed on the screen.
 
-## Available Scripts
+In case when user enters the letter that is not part of the hidden word, letter is displayed as wrong. All wrong letters are displayed on the screen. Furthermore, every wrong letter reveals different part of the hangman. In case if user selects same letter more than once, message informing him that letter was previously selected is displayed.
 
-In the project directory, you can run:
+User can make max six wrong guessess before game ends. User can play again by clicking on the button Play again displayed at the end of each game.
 
-### `npm start`
+## Initialization of the app
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To start app enter npm start in terminal.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Git ignore
 
-### `npm test`
+If you clone app from the Github please install node-modules to be able to run the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Components
 
-### `npm run build`
+There are six different components in the game:
+1. Figure.js - for displaying figure of hangman if user makes wrong guess
+2. Header.js
+3. Notification.js - for informing user in case if he selects the previously selected letter
+4. Popup.js - displays final message at the end of each game and enables user to start new game
+5. Word.js - gets all letters from the word in array 
+6. WrongLetters.js - for storing all wrong letters
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App uses axios for making API call
