@@ -16,6 +16,7 @@ const App = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [word, setWord] = useState([])
   const [selectedWord, setSelectedWord] = useState("")
+  const [test, setTest] = useState([])
 
   useEffect(()=>{
     getWord(data=>{
@@ -31,7 +32,7 @@ const App = () => {
       if (playable && keyCode >= 65 && keyCode <= 90) {
         const letter = key.toLowerCase();
         if (selectedWord.includes(letter)) {
-          if (!correctLetters.includes(letter)) {
+         if (!correctLetters.includes(letter)) {
             setCorrectLetters(currentLetters => [...currentLetters, letter]);
           } else {
             show(setShowNotification);
@@ -66,7 +67,20 @@ const App = () => {
       setWord(data)
     })
   }
-console.log(selectedWord)
+
+  let visibility = "hidden"
+ 
+  let letters  = selectedWord.split("")
+  let uniqueLetters = letters.filter((item, i , arr) => arr.indexOf(item) === i)
+  
+
+  if(selectedWord.length !== 0 & (uniqueLetters.length - correctLetters.length) === 0){
+    console.log(true)
+    visibility = "visible"
+  }else if(wrongLetters.length === 6){
+    visibility = "visible"
+  }
+
   return (
     <>
       <Header />
@@ -75,7 +89,7 @@ console.log(selectedWord)
         <WrongLetters wrongLetters={wrongLetters} />
         <Word selectedWord={selectedWord} correctLetters={correctLetters} />
       </div>
-      <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
+      <Popup visibility={visibility} correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
       <Notification showNotification={showNotification} />
     </>
   );

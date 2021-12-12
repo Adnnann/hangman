@@ -3,7 +3,7 @@ import React from 'react';
 const Word = ({ selectedWord, correctLetters }) => {
 
   return (
-    <div className="word">
+    <div className="word" id="word">
       {selectedWord.split('').map((letter, i) => {
         return (
           <span className="letter" key={i}>
