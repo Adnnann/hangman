@@ -62,6 +62,9 @@ function App() {
     setWrongLetters([]);
     const random = Math.floor(Math.random() * word.length);
     setSelectedWord(word[random]);
+    getWord(data=>{
+      setWord(data)
+    })
   }
 console.log(selectedWord)
   return (
