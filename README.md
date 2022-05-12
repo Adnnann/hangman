@@ -27,3 +27,7 @@ There are six different components in the game:
 ## Dependencies
 
 App uses axios for making API call
+
+## Try on CodeSandbox
+
+https://codesandbox.io/s/immutable-glitter-zbx6mg?file=/src/App.js
